@@ -23,7 +23,11 @@ public class TestHelper {
         }
     }
 
-    public static String getContainerBaseUrl() {
+    public static String getContainerUrl(String path) {
+        return String.format("%s/%s", getContainerBaseUrl(), path);
+    }
+
+    private static String getContainerBaseUrl() {
         // TODO: replace context-root via microprofile-configuration
         return String.format("http://127.0.0.1:%s/integration-tests-via-fabric8io", getContainerPort());
     }
